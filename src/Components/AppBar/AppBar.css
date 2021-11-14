@@ -1,0 +1,99 @@
+.app-container {
+  -webkit-backdrop-filter: blur(24px) brightness(100%);
+  backdrop-filter: blur(24px) brightness(100%);
+  background-color: #1d1d1d80;
+  box-shadow: 0px 40px 40px #00000029;
+  height: 1000px;
+  width: 56px;
+  position: relative;
+}
+
+.buttons {
+  position: absolute;
+  top: 160px;
+  left: 12px;
+  height: 368px;
+  width: 32px;
+}
+
+.icon-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 32px;
+  width: 32px;
+}
+
+.icon {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: 20px;
+  width: 20px;
+}
+
+/*This SVG filter will only impart color to icons with a white fill,
+ * so If we have an icon with a black fill, we can use invert() to
+ * convert it to white before applying the SVG filter. 
+*/
+.icon:hover {
+  cursor: pointer;
+  filter: invert(100%);
+  filter: url(#icon-filter);
+}
+
+.icon-button-1 {
+  position: absolute;
+  top: 112px;
+  left: 0;
+  height: 32px;
+  width: 32px;
+}
+
+.icon-button-2 {
+  position: absolute;
+  top: 224px;
+  left: 0;
+  height: 32px;
+  width: 32px;
+}
+
+.icon-button-3 {
+  position: absolute;
+  top: 112px;
+  left: 0;
+  top: 336px;
+  width: 32px;
+}
+
+.app-container-animate2 {
+  position: absolute;
+  overflow: hidden;
+  top: 40px;
+  left: 0;
+  height: 56px;
+  width: 56px;
+}
+
+.overlap-group {
+  position: relative;
+  top: 2px;
+  height: 58px;
+  width: 57px;
+}
+
+.icon-play {
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  height: 56px;
+  width: 46px;
+}
+
+.icon-play-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 55px;
+  width: 57px;
+}
