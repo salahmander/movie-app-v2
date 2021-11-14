@@ -1,9 +1,9 @@
 import React from "react";
-
+import AppBar from "./Components/AppBar/AppBar";
 const App = () => {
   return (
     <div>
-      <h1>Movie App</h1>
+      <AppBar />
     </div>
   );
 };
