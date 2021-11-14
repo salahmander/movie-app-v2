@@ -10,7 +10,14 @@ import iconMovie from "../../Assets/icon-movie.svg";
 import iconStartStroke from "../../Assets/icon-star-stroke.svg";
 import iconTV from "../../Assets/icon-movie.svg";
 
-//https://css-tricks.com/the-many-ways-to-change-an-svg-fill-on-hover-and-when-to-use-them/
+/**
+ * This is to allow the svg icons to change
+ * colour when a user hover over them, colour is
+ * is currently set to #5539cc (blurple colour).
+ * To change the colour update `feColorMatrix` to
+ * desired colour.
+ * 
+ */
 const SvgMatrixFilter = () => {
   return (
     <>
@@ -33,6 +40,7 @@ const SvgMatrixFilter = () => {
 };
 
 const AppBar = () => {
+
   const homeButtonHandler = () => {
     console.log("Home");
   };
