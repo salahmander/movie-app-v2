@@ -1,7 +1,11 @@
+// Library imports
 import axios from "axios";
 
 // Action types
 import * as actionTypes from "../../actionTypes";
+
+// Util
+import { API_KEY } from "../../../../util/constants";
 
 export const setNowPlayingMoviesRequest = () => {
   return {
@@ -24,17 +28,20 @@ export const setNowPlayingMoviesFail = (error) => {
 };
 
 export const fetchNowPlayingMovies = () => {
-  const apiKey = process.env.REACT_APP_MOVIE_API_KEY;
   return (dispatch) => {
     dispatch(setNowPlayingMoviesRequest());
-    return axios
-      // Fetch now playing movies in  Great Britain. 
-      .get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&region=GB`)
-      .then((res) => {
-        dispatch(setNowPlayingMoviesSuccess(res.data));
-      })
-      .catch((err) => {
-        dispatch(setNowPlayingMoviesFail(err));
-      });
+    return (
+      axios
+        // Fetch now playing movies in Great Britain.
+        .get(
+          `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&region=GB`
+        )
+        .then((res) => {
+          dispatch(setNowPlayingMoviesSuccess(res.data));
+        })
+        .catch((err) => {
+          dispatch(setNowPlayingMoviesFail(err));
+        })
+    );
   };
 };
