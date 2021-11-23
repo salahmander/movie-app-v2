@@ -3,20 +3,20 @@ import React from "react";
 import "./AppBar.css";
 
 // Icons
-import iconPlay from "../../Assets/icon-play.svg";
-import iconPlay1 from "../../Assets/icon-play-1.svg";
-import iconHome from "../../Assets/icon-home.svg";
-import iconMovie from "../../Assets/icon-movie.svg";
-import iconStartStroke from "../../Assets/icon-star-stroke.svg";
-import iconTV from "../../Assets/icon-movie.svg";
+import iconPlay from "../../assets/icon-play.svg";
+import iconPlay1 from "../../assets/icon-play-1.svg";
+import iconHome from "../../assets/icon-home.svg";
+import iconMovie from "../../assets/icon-movie.svg";
+import iconStartStroke from "../../assets/icon-star-stroke.svg";
+import iconTV from "../../assets/icon-tv.svg";
 
 /**
  * This is to allow the svg icons to change
  * colour when a user hover over them, colour is
- * is currently set to #5539cc (blurple colour).
+ * is currently set to #1e5ad8 (blurple colour).
  * To change the colour update `feColorMatrix` to
  * desired colour.
- * 
+ *
  */
 const SvgMatrixFilter = () => {
   return (
@@ -27,9 +27,9 @@ const SvgMatrixFilter = () => {
             <feColorMatrix
               colorInterpolationFilters="sRGB"
               type="matrix"
-              values="0.33 0   0   0   0
-              0   0.22  0   0   0
-              0   0   0.80  0   0
+              values="0.12 0   0   0   0
+              0   0.35  0   0   0
+              0   0   0.85  0   0
               0   0   0   1   0 "
             />
           </filter>
@@ -40,7 +40,6 @@ const SvgMatrixFilter = () => {
 };
 
 const AppBar = () => {
-
   const homeButtonHandler = () => {
     console.log("Home");
   };
