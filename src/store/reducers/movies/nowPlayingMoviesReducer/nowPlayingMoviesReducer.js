@@ -6,14 +6,14 @@ const initialState = {
   error: "",
 };
 
-export const nowPlayingMoviesRequest = (state, action) => {
+const nowPlayingMoviesRequest = (state, action) => {
   return {
     ...state,
     loading: true,
   };
 };
 
-export const nowPlayingMoviesSuccess = (state, action) => {
+const nowPlayingMoviesSuccess = (state, action) => {
   return {
     ...state,
     nowPlayingMovies: action.payload,
@@ -22,7 +22,7 @@ export const nowPlayingMoviesSuccess = (state, action) => {
   };
 };
 
-export const nowPlayingMoviesFail = (state, action) => {
+const nowPlayingMoviesFail = (state, action) => {
   return {
     ...state,
     loading: false,
@@ -33,10 +33,10 @@ export const nowPlayingMoviesFail = (state, action) => {
 const nowPlayingMovieReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FETCH_NOW_PLAYING_MOVIES_REQUEST:
-      return nowPlayingMovieReducer(state, action);
+      return nowPlayingMoviesRequest(state, action);
     case actionTypes.FETCH_NOW_PLAYING_MOVIES_SUCCESS:
       return nowPlayingMoviesSuccess(state, action);
-    case actionTypes.FETCH_NOW_PLAYING_MOVIES_FAIL(state, action):
+    case actionTypes.FETCH_NOW_PLAYING_MOVIES_FAIL:
       return nowPlayingMoviesFail(state, action);
     default:
       return state;
