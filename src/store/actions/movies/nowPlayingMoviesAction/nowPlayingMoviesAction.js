@@ -7,41 +7,40 @@ import * as actionTypes from "../../actionTypes";
 // Util
 import { API_KEY } from "../../../../util/constants";
 
-export const setNowPlayingMoviesRequest = () => {
+const setNowPlayingMoviesRequest = () => {
   return {
     type: actionTypes.FETCH_NOW_PLAYING_MOVIES_REQUEST,
   };
 };
 
-export const setNowPlayingMoviesSuccess = (data) => {
+const setNowPlayingMoviesSuccess = (data) => {
   return {
     type: actionTypes.FETCH_NOW_PLAYING_MOVIES_SUCCESS,
     payload: data,
   };
 };
 
-export const setNowPlayingMoviesFail = (error) => {
+const setNowPlayingMoviesFail = (error) => {
   return {
     type: actionTypes.FETCH_NOW_PLAYING_MOVIES_FAIL,
     payload: error,
   };
 };
 
+// Fetch now playing movies in Great Britain.
 export const fetchNowPlayingMovies = () => {
   return (dispatch) => {
     dispatch(setNowPlayingMoviesRequest());
-    return (
-      axios
-        // Fetch now playing movies in Great Britain.
-        .get(
-          `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&region=GB`
-        )
-        .then((res) => {
-          dispatch(setNowPlayingMoviesSuccess(res.data));
-        })
-        .catch((err) => {
-          dispatch(setNowPlayingMoviesFail(err));
-        })
-    );
+    return axios
+      .get(
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&region=GB`
+      )
+      .then((res) => {
+        dispatch(setNowPlayingMoviesSuccess(res.data));
+        console.log(res.data);
+      })
+      .catch((err) => {
+        dispatch(setNowPlayingMoviesFail(err));
+      });
   };
 };
