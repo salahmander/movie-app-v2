@@ -1,0 +1,14 @@
+:root {
+  --secondaryBlack: rgba(0, 0, 0, 1);
+  --primaryTeal: rgba(15, 239, 253, 1);
+  --primaryEerie: rgba(29, 29, 29, 1);
+  --primaryWhite: rgba(255, 255, 255, 1);
+  --PrimaryBlue: #1e5ad8;
+  --font-size-s: 12px;
+  --font-size-m: 16px;
+  --font-size-l: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+  --font-size-xxxl: 56px;
+  --font-family-roboto: "Roboto";
+}
