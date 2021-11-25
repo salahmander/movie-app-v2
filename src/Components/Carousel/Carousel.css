@@ -1,26 +1,142 @@
-@import '../../util/constants/constant.css';
+@import "../../util/constants/constant.css";
 
 .carousel-container {
   position: absolute;
   overflow: hidden;
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 0;
 }
-
 .slide {
   width: 100%;
   height: 100%;
   position: absolute;
   opacity: 0;
   transition: opacity ease-in-out 0.4s;
+  z-index: 0;
 }
-.slide img {
+.carousel-slide-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.carousel-slide-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
+.carousel-slide-information-container {
+  position: absolute;
+  height: 320px;
+  width: 632px;
+  top: 164px;
+  left: 236px;
+}
+
+.carousel-slide-information-container .icon-star-container {
+  position: absolute;
+  height: 16px;
+  width: 80px;
+  top: 40px;
+  left: 0;
+}
+
+.carousel-slide-information-container .icon-star-fill-1 {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  left: 0;
+}
+
+.carousel-slide-information-container .icon-star-fill-2 {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  left: 16px; 
+}
+
+.carousel-slide-information-container .icon-star-fill-3 {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  left: 32px;
+}
+
+.carousel-slide-information-container .icon-star-fill-4 {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  left: 48px;
+}
+
+.carousel-slide-information-container .icon-star-fill-5 {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  left: 64px;
+}
+
+.carousel-slide-information-container .tag {
+  position: absolute;
+  height: 24px;
+  width: 111px;
+  top: 0;
+  left: 0;
+}
+
+.carousel-slide-information-container .title {
+  position: absolute;
+  width: 632px;
+  top: 30px;
+  left: 0;
+  line-height: 64px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  white-space: nowrap;
+  color: var(--primaryWhite);
+}
+
+.carousel-slide-information-container .overlap-group {
+  position: absolute;
+  height: 219px;
+  width: 652px;
+  top: 130px;
+  left: -20px;
+}
+
+.carousel-slide-information-container .description {
+  position: absolute;
+  width: 632px;
+  top: 0;
+  left: 20px;
+  line-height: 32px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color: var(--primaryWhite);
+}
+
+.carousel-slide-information-container .view-now-button {
+  position: absolute;
+  height: 127px;
+  width: 240px;
+  top: 110px;
+  left: 10;
+}
+
 .active-anim {
   opacity: 1;
 }
@@ -109,8 +225,8 @@
   display: flex;
 }
 .dot {
-  width: 13px;
   height: 13px;
+  width: 13px;
   border-radius: 50%;
   margin: 0 5px;
   background: #fff;
@@ -118,6 +234,6 @@
   opacity: 0.8;
 }
 .dot.active {
-  background: var(--PrimaryBlue);
+  background: var(--primaryBlue);
   opacity: 1;
 }

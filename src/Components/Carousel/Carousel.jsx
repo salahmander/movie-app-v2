@@ -5,6 +5,9 @@ import "./Carousel.css";
 // SVG
 import leftArrow from "../../assets/left-arrow.svg";
 import rightArrow from "../../assets/right-arrow.svg";
+import iconStarFill from "../../assets/icon-star-fill.svg";
+import tag from "../../assets/tag.svg"
+import button from "../../assets/button.svg"
 
 // Dummy Data
 import dataSlider from "./dataSlider";
@@ -38,7 +41,29 @@ const Carousel = () => {
       {dataSlider.map((obj, index) => {
         return (
           <div key={obj.id} className={slideIndex === index + 1 ? "slide active-anim" : "slide"}>
-            <img src={`/Imgs/img${index + 1}.jpg`} alt="movies"/>
+            <header className="carousel-slide-container">
+              <img src={`/Imgs/img${index + 1}.jpg`} alt="movies" />
+              <div className="carousel-slide-information-container">
+                <img className="tag" src={tag} alt="tag"/>
+                <div class="icon-star-container">
+                  <img class="icon-star-fill-1" src={iconStarFill} alt="star-1"/>
+                  <img class="icon-star-fill-2" src={iconStarFill} alt="star-2"/>
+                  <img class="icon-star-fill-3" src={iconStarFill} alt="star-3"/>
+                  <img class="icon-star-fill-4" src={iconStarFill} alt="star-4"/>
+                  <img class="icon-star-fill-5" src={iconStarFill} alt="star-5"/>
+                </div>
+                <h1 class="title desktop-h1">Godzilla vs. Kong</h1>
+                <div class="overlap-group">
+                  <p class="description mobile-card-copy">
+                    In a time when monsters walk the Earth, humanity’s fight for
+                    its future sets Godzilla and Kong on a collision course that
+                    will see the two most powerful forces of nature on the planet
+                    collide in a spectacular battle for the ages.
+                  </p>
+                  <img class="view-now-button" src={button} alt="view-now"/>
+                </div>
+              </div>
+            </header>
           </div>
         );
       })}
