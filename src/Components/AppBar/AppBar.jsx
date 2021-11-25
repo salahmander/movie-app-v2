@@ -56,8 +56,8 @@ const AppBar = () => {
     console.log("Favourites");
   };
   return (
-    <div className="app-container">
-      <div className="app-container-animate2">
+    <div className="app-bar-container">
+      <div className="app-bar-container-animate2">
         <div className="overlap-group">
           <img className="icon-play" src={iconPlay} alt="icon button" />
           <img className="icon-play-1" src={iconPlay1} alt="icon button" />
