@@ -133,6 +133,38 @@
   left: 10px;
 }
 
+/* Smartphones (portrait) (extra extra small screen size (galaxy fold)) ----------- */
+@media only screen and (max-device-width: 280px) {
+  .carousel-slider-information-container {
+    height: 560px;
+    width: 200px;
+    top: 35px;
+    left: 65px;
+  }
+
+  .carousel-slider-information-container .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .carousel-slider-information-container .overlap-group {
+    width: 200px;
+    top: 90px;
+  }
+
+  .carousel-slider-information-container .description {
+    width: 195px;
+    line-height: 25px;
+  }
+
+  .carousel-slider-information-container .view-now-button {
+    position: absolute;
+    height: 127px;
+    width: 240px;
+    top: 350px;
+    left: 0px;
+  }
+}
+
 /* Smartphones (portrait) (extra small screen size) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
   .carousel-slider-information-container {
