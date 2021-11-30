@@ -1,6 +1,6 @@
 import React from "react";
 import AppBar from "./Components/AppBar/AppBar";
-import SecondExample from "./Components/Carousel/Carousel";
+import SecondExample from "./Containers/Carousel/Carousel";
 const App = () => {
   return (
     <div>
