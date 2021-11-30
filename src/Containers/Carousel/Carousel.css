@@ -106,3 +106,13 @@
   background: var(--primaryBlue);
   opacity: 1;
 }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-device-width: 280px) and (max-device-width: 420px) {
+  .carousel-container {
+    height: 100vh;
+  }
+  .container-dots {
+    left: 55%;
+  }
+}
