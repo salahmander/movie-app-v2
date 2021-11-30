@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./Carousel.css";
 
@@ -9,46 +10,69 @@ import rightArrow from "../../assets/right-arrow.svg";
 // Components
 import CarouselSlider from "../../Components/Carousel/CarouselSlider/CarouselSlider";
 
-// Dummy Data
-import dataSlider from "./dataSlider";
+// Redux Actions
+import { fetchNowPlayingMovies } from "../../store/actions/movies/nowPlayingMoviesAction/nowPlayingMoviesAction";
 
 const Carousel = () => {
-  const [slideIndex, setSlideIndex] = useState(1);
+  const dispatch = useDispatch();
 
+  // States
+  const [slideIndex, setSlideIndex] = useState(1);
+  const [slideData, setSlideData] = useState([]);
+
+  // Redux State
+  const nowPlayingMovies = useSelector(
+    (state) => state.nowPlayingMovies.nowPlayingMovies
+  );
+
+  // Fetch now playing movies
+  useEffect(() => {
+    dispatch(fetchNowPlayingMovies());
+  }, [dispatch]);
+
+  /**
+   * nowPlayingMovies object reduced to a new array
+   * containing 5 entries, to be used for the carousel slides.
+   */
+  useEffect(() => {
+    if (Object.keys(nowPlayingMovies).length > 0) {
+      const movieData = nowPlayingMovies?.results?.slice(0, 5);
+      setSlideData(movieData);
+    }
+  }, [nowPlayingMovies]);
+
+  // Next carousel slide handler
   const nextSlide = () => {
-    if (slideIndex !== dataSlider.length) {
+    if (slideIndex !== slideData.length) {
       setSlideIndex(slideIndex + 1);
-    } else if (slideIndex === dataSlider.length) {
+    } else if (slideIndex === slideData.length) {
       setSlideIndex(1);
     }
   };
 
+  // Previous carousel slide handler
   const prevSlide = () => {
     if (slideIndex !== 1) {
       setSlideIndex(slideIndex - 1);
     } else if (slideIndex === 1) {
-      setSlideIndex(dataSlider.length);
+      setSlideIndex(slideData.length);
     }
   };
 
+  // Carousel current slide indicator handler
   const moveDot = (index) => {
     setSlideIndex(index);
   };
-
   return (
     <div className="carousel-container">
       {/*Carousel Slides*/}
-      {dataSlider.map((obj, index) => {
-        const image = `/Imgs/img${index + 1}.jpg`;
-        const name = "Godzilla vs. Kong";
-        const description =
-          "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.";        
+      {slideData.map((data, index) => {
         return (
           <CarouselSlider
-            name={name}
-            description={description}
-            image={image}
-            obj={obj}
+            key={data.id}
+            title={data.title}
+            description={data.overview}
+            image={`/Imgs/img${index + 1}.jpg`}
             index={index}
             slideIndex={slideIndex}
           />
@@ -69,6 +93,7 @@ const Carousel = () => {
       <div className="container-dots">
         {Array.from({ length: 5 }).map((item, index) => (
           <div
+            key={index}
             onClick={() => moveDot(index + 1)}
             className={slideIndex === index + 1 ? "dot active" : "dot"}
           ></div>
