@@ -171,3 +171,11 @@
     left: 90px;
   }
 }
+
+/* Smartphones (portrait) (large screen size) ----------- */
+@media only screen and (min-device-width: 411px) and (max-device-width: 414px) {
+  .carousel-slider-information-container {
+    top: 120px;
+    left: 100px;
+  }
+}
