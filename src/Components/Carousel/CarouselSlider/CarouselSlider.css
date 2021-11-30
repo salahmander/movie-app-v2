@@ -130,5 +130,37 @@
   height: 127px;
   width: 240px;
   top: 110px;
-  left: 10;
+  left: 10px;
+}
+
+/* Smartphones (portrait) (small Screen Size) ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) {
+  .carousel-slider-information-container {
+    height: 560px;
+    width: 260px;
+    top: 40px;
+    left: 80px;
+  }
+
+  .carousel-slider-information-container .title {
+    font-size: var(--font-size-xxl);
+  }
+
+  .carousel-slider-information-container .overlap-group {
+    width: 275px;
+    top: 110px;
+  }
+
+  .carousel-slider-information-container .description {
+    width: 265px;
+    line-height: 25px;
+  }
+
+  .carousel-slider-information-container .view-now-button {
+    position: absolute;
+    height: 127px;
+    width: 240px;
+    top: 230px;
+    left: 20px;
+  }
 }
