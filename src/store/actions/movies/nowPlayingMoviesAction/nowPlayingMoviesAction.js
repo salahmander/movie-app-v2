@@ -5,7 +5,7 @@ import axios from "axios";
 import * as actionTypes from "../../actionTypes";
 
 // Util
-import { API_KEY } from "../../../../util/constants";
+import { API_KEY } from "../../../../util/constants/constants";
 
 const setNowPlayingMoviesRequest = () => {
   return {
@@ -37,7 +37,6 @@ export const fetchNowPlayingMovies = () => {
       )
       .then((res) => {
         dispatch(setNowPlayingMoviesSuccess(res.data));
-        console.log(res.data);
       })
       .catch((err) => {
         dispatch(setNowPlayingMoviesFail(err));
