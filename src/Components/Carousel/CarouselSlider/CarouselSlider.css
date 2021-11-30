@@ -133,6 +133,38 @@
   left: 10px;
 }
 
+/* Smartphones (portrait) (extra small screen size) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
+  .carousel-slider-information-container {
+    height: 425px;
+    width: 260px;
+    top: 90px;
+    left: 80px;
+  }
+
+  .carousel-slider-information-container .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .carousel-slider-information-container .overlap-group {
+    width: 250px;
+    top: 90px;
+  }
+
+  .carousel-slider-information-container .description {
+    width: 230px;
+    line-height: 25px;
+  }
+
+  .carousel-slider-information-container .view-now-button {
+    position: absolute;
+    height: 127px;
+    width: 240px;
+    top: 250px;
+    left: 5px;
+  }
+}
+
 /* Smartphones (portrait) (small screen size) ----------- */
 @media only screen and (min-device-width: 360px) and (max-device-width: 414px) {
   .carousel-slider-information-container {
