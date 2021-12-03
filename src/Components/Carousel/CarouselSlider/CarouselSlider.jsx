@@ -7,11 +7,19 @@ import "./CarouselSlider.css";
 import iconStarFill from "../../../assets/icon-star-fill.svg";
 import tag from "../../../assets/tag.svg";
 
-const CarouselSlider = ({ title, description, image, index, slideIndex }) => {
+// Constants
+import { CONFIGURATIONS } from "../../../util/constants/configurations/configurationConstants";
+
+const CarouselSlider = ({ movie, index, slideIndex }) => {
+  // Destructure the configuration object values to keep variable declaration shorter
+  const { secure_base_url, backdrop_sizes } = CONFIGURATIONS.images;
+
+  const backDrop = `${secure_base_url}${backdrop_sizes[3]}${movie.backdrop_path}`;
+
   return (
     <div className={slideIndex === index + 1 ? "slider active-anim" : "slider"}>
       <header className="carousel-slider-container">
-        <img src={image} alt="movies" />
+        <img src={backDrop} alt="movies" />
         <div className="carousel-slider-information-container">
           <img className="tag" src={tag} alt="tag" />
           <div className="icon-star-container">
@@ -21,10 +29,10 @@ const CarouselSlider = ({ title, description, image, index, slideIndex }) => {
             <img className="icon-star-fill-4" src={iconStarFill} alt="star-4" />
             <img className="icon-star-fill-5" src={iconStarFill} alt="star-5" />
           </div>
-          <h1 className="title desktop-h1">{title}</h1>
+          <h1 className="title desktop-h1">{movie.title}</h1>
           <div className="overlap-group">
             <div className="overlap-group-description">
-              <p className="description mobile-card-copy">{description}</p>
+              <p className="description mobile-card-copy">{movie.overview}</p>
             </div>
             <div className="overlap-group-view">
               <h1>Button</h1>
