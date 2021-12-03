@@ -66,13 +66,11 @@ const Carousel = () => {
   return (
     <div className="carousel-container">
       {/*Carousel Slides*/}
-      {slideData.map((data, index) => {
+      {slideData.map((movie, index) => {
         return (
           <CarouselSlider
-            key={data.id}
-            title={data.title}
-            description={data.overview}
-            image={`/Imgs/img${index + 1}.jpg`}
+            key={movie.id}
+            movie={movie}
             index={index}
             slideIndex={slideIndex}
           />
