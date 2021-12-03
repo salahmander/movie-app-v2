@@ -15,7 +15,6 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -28,18 +27,30 @@
 
 .carousel-slider-information-container {
   position: absolute;
-  height: 320px;
-  width: 632px;
-  top: 164px;
-  left: 236px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 1400px;
+  height: 75%;
+  top: 14%;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-slider-information-container .tag {
+  position: absolute;
+  height: 24px;
+  width: 111px;
+  top: 20px;
+  left: 40px;
 }
 
 .carousel-slider-information-container .icon-star-container {
   position: absolute;
   height: 16px;
   width: 80px;
-  top: 40px;
-  left: 0;
+  top: 60px;
+  left: 40px;
 }
 
 .carousel-slider-information-container .icon-star-fill-1 {
@@ -82,19 +93,11 @@
   left: 64px;
 }
 
-.carousel-slider-information-container .tag {
-  position: absolute;
-  height: 24px;
-  width: 111px;
-  top: 0;
-  left: 0;
-}
-
 .carousel-slider-information-container .title {
   position: absolute;
-  width: 632px;
-  top: 30px;
-  left: 0;
+  width: 100%;
+  top: 50px;
+  left: 40px;
   line-height: 64px;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -106,17 +109,32 @@
 
 .carousel-slider-information-container .overlap-group {
   position: absolute;
-  height: 219px;
-  width: 652px;
-  top: 130px;
-  left: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 72%;
+  width: 100%;
+  top: 150px;
+  left: 40px;
+}
+
+.overlap-group-description {
+  height: 74%;
+  width: 100%;
+}
+
+.overlap-group-view {
+  height: 70px;
+  width: 100%;
+  color: var(--primaryWhite);
 }
 
 .carousel-slider-information-container .description {
-  position: absolute;
-  width: 632px;
-  top: 0;
-  left: 20px;
+  width: 75%;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   line-height: 32px;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -125,121 +143,193 @@
   color: var(--primaryWhite);
 }
 
-.carousel-slider-information-container .view-now-button {
-  position: absolute;
-  height: 127px;
-  width: 240px;
-  top: 110px;
-  left: 10px;
-}
-
 /* Smartphones (portrait) (extra extra small screen size (galaxy fold)) ----------- */
 @media only screen and (max-device-width: 280px) {
   .carousel-slider-information-container {
     height: 560px;
-    width: 200px;
+    width: 210px;
     top: 35px;
     left: 65px;
   }
 
+  .carousel-slider-information-container .tag {
+    left: 15px;
+  }
+
+  .carousel-slider-information-container .icon-star-container {
+    left: 15px;
+  }
+
   .carousel-slider-information-container .title {
     font-size: var(--font-size-xl);
+    left: 15px;
   }
 
   .carousel-slider-information-container .overlap-group {
     width: 200px;
-    top: 90px;
+    height: 455px;
+    top: 100px;
+    left: 15px;
+  }
+
+  .carousel-slider-information-container .overlap-group-description {
+    height: 350px;
   }
 
   .carousel-slider-information-container .description {
     width: 195px;
     line-height: 25px;
-  }
-
-  .carousel-slider-information-container .view-now-button {
-    position: absolute;
-    height: 127px;
-    width: 240px;
-    top: 350px;
-    left: 0px;
+    display: -webkit-box;
+    -webkit-line-clamp: 13;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 /* Smartphones (portrait) (extra small screen size) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
   .carousel-slider-information-container {
-    height: 425px;
-    width: 260px;
-    top: 90px;
-    left: 80px;
+    height: 490px;
+    width: 245px;
+    top: 30px;
+    left: 65px;
+  }
+
+  .carousel-slider-information-container .tag {
+    left: 20px;
+  }
+
+  .carousel-slider-information-container .icon-star-container {
+    left: 20px;
   }
 
   .carousel-slider-information-container .title {
     font-size: var(--font-size-xl);
+    left: 20px;
   }
 
   .carousel-slider-information-container .overlap-group {
-    width: 250px;
-    top: 90px;
+    width: 235px;
+    height: 385px;
+    top: 100px;
+    left: 20px;
+    gap: 20px;
+  }
+
+  .carousel-slider-information-container .overlap-group-description {
+    height: 275px;
   }
 
   .carousel-slider-information-container .description {
-    width: 230px;
+    width: 215px;
     line-height: 25px;
-  }
-
-  .carousel-slider-information-container .view-now-button {
-    position: absolute;
-    height: 127px;
-    width: 240px;
-    top: 250px;
-    left: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 /* Smartphones (portrait) (small screen size) ----------- */
-@media only screen and (min-device-width: 360px) and (max-device-width: 414px) {
+@media only screen and (min-device-width: 360px) and (max-device-width: 376px) {
   .carousel-slider-information-container {
     height: 560px;
-    width: 260px;
-    top: 90px;
-    left: 80px;
+    width: 270px;
+    top: 30px;
+    left: 75px;
+  }
+
+  .carousel-slider-information-container .tag {
+    left: 20px;
+  }
+
+  .carousel-slider-information-container .icon-star-container {
+    left: 20px;
   }
 
   .carousel-slider-information-container .title {
     font-size: var(--font-size-xxl);
+    top: 65px;
+    left: 20px;
+    line-height: normal;
+    word-wrap: break-word;
+    white-space: normal;
   }
 
   .carousel-slider-information-container .overlap-group {
-    width: 275px;
-    top: 110px;
+    width: 260px;
+    height: 440px;
+    top: 115px;
+    left: 20px;
+  }
+
+  .carousel-slider-information-container .overlap-group-description {
+    height: 325px;
   }
 
   .carousel-slider-information-container .description {
-    width: 265px;
+    width: 250px;
     line-height: 25px;
-  }
-
-  .carousel-slider-information-container .view-now-button {
-    position: absolute;
-    height: 127px;
-    width: 240px;
-    top: 230px;
-    left: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 12;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 /* Smartphones (portrait) (medium screen size) ----------- */
-@media only screen and (min-device-width: 375px) and (max-device-width: 411px) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 414px) {
   .carousel-slider-information-container {
-    left: 90px;
+    height: 85vh;
+    width: 78vw;
+    top: 30px;
+    left: 75px;
+  }
+
+  .carousel-slider-information-container .tag {
+    left: 20px;
+  }
+
+  .carousel-slider-information-container .icon-star-container {
+    left: 20px;
+  }
+
+  .carousel-slider-information-container .title {
+    font-size: var(--font-size-xxl);
+    top: 65px;
+    left: 20px;
+    line-height: normal;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  .carousel-slider-information-container .overlap-group {
+    height: 69vh;
+    width: 75vw;
+    top: 115px;
+    left: 20px;
+  }
+
+  .carousel-slider-information-container .overlap-group-description {
+    height: 54vh;
+  }
+
+  .carousel-slider-information-container .description {
+    width: 70vw;
+    line-height: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp: 13;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
-/* Smartphones (portrait) (large screen size) ----------- */
-@media only screen and (min-device-width: 411px) and (max-device-width: 414px) {
-  .carousel-slider-information-container {
-    top: 120px;
-    left: 100px;
+@media only screen and (device-height: 823px) {
+  .carousel-slider-information-container .description {
+    -webkit-line-clamp: 17;
   }
 }
