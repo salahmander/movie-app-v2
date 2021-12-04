@@ -7,10 +7,12 @@ import "./CarouselSlider.css";
 import iconStarFill from "../../../assets/icon-star-fill-blue.svg";
 import iconStarHalfFill from "../../../assets/icon-star-half-fill-blue.svg";
 import iconStarNoFill from "../../../assets/icon-star-no-fill.svg";
-import scifi from "../../../assets/science-fiction-tag.svg";
 
 // Constants
 import { CONFIGURATIONS } from "../../../util/constants/configurations/configurationConstants";
+
+// Utility Functions
+import { genreTag } from "../../../util/genreTag/genreTag";
 
 const CarouselSlider = ({ movie, index, slideIndex }) => {
   // Destructure the configuration object values to keep variable declaration short
@@ -18,13 +20,23 @@ const CarouselSlider = ({ movie, index, slideIndex }) => {
 
   const backDrop = `${secure_base_url}${backdrop_sizes[3]}${movie.backdrop_path}`;
   const ratings = movie.vote_average / 2; // Needs to be halved as the vote_average goes up to 10, it has to be 5
+  const genres = genreTag(movie.genre_ids);
   return (
     <div className={slideIndex === index + 1 ? "slider active-anim" : "slider"}>
       <header className="carousel-slider-container">
         <img src={backDrop} alt="movies" />
         <div className="carousel-slider-overlay">
           <div className="carousel-slider-information-container">
-            <img className="tag" src={scifi} alt="tag" />
+            <div className="genres-container">
+              {genres.map((genre) => (
+                <img
+                  className="tag"
+                  key={genre?.id}
+                  src={genre?.tag}
+                  alt={genre?.name}
+                />
+              ))}
+            </div>
             <div className="icon-star-container">
               <img
                 className="icon-star-fill-1"
