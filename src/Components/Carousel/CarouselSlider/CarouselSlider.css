@@ -25,7 +25,7 @@
   object-fit: cover;
 }
 
-.carousel-slider-overlay{
+.carousel-slider-overlay {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -35,28 +35,35 @@
 }
 
 .carousel-slider-information-container {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   width: 80%;
   max-width: 1400px;
-  height: 75%;
-  top: 14%;
+  height: 83%;
+  top: 10%;
+}
+
+.genres-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 90%;
+  height: auto;
+  margin-top: 20px;
+  margin-left: 40px;
 }
 
 .carousel-slider-information-container .tag {
-  position: absolute;
   height: 24px;
   width: 111px;
-  top: 20px;
-  left: 40px;
 }
 
 .carousel-slider-information-container .icon-star-container {
-  position: absolute;
+  position: relative;
   height: 16px;
   width: 80px;
-  top: 60px;
   left: 40px;
 }
 
@@ -101,11 +108,11 @@
 }
 
 .carousel-slider-information-container .title {
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: 50px;
   left: 40px;
-  line-height: 64px;
+  top: -20px;
+  line-height: 20px;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -115,13 +122,13 @@
 }
 
 .carousel-slider-information-container .overlap-group {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
   height: 72%;
   width: 100%;
-  top: 150px;
+  top: -60px;
   left: 40px;
 }
 
@@ -139,7 +146,7 @@
 .carousel-slider-information-container .description {
   width: 75%;
   display: -webkit-box;
-  -webkit-line-clamp: 9;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 32px;
