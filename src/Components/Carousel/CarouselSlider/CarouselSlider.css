@@ -109,15 +109,13 @@
 
 .carousel-slider-information-container .title {
   position: relative;
-  width: 100%;
+  width: 95%;
   left: 40px;
   top: -20px;
-  line-height: 20px;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  white-space: nowrap;
   color: var(--primaryWhite);
 }
 
@@ -133,14 +131,7 @@
 }
 
 .overlap-group-description {
-  height: 74%;
   width: 100%;
-}
-
-.overlap-group-view {
-  height: 70px;
-  width: 100%;
-  color: var(--primaryWhite);
 }
 
 .carousel-slider-information-container .description {
@@ -157,193 +148,208 @@
   color: var(--primaryWhite);
 }
 
+.overlap-group-view {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  color: var(--primaryWhite);
+}
+
 /* Smartphones (portrait) (extra extra small screen size (galaxy fold)) ----------- */
 @media only screen and (max-device-width: 280px) {
   .carousel-slider-information-container {
-    height: 560px;
-    width: 210px;
-    top: 35px;
-    left: 65px;
+    top: 20px;
+    left: 25px;
+    gap: 20px;
+  }
+
+  .genres-container {
+    position: relative;
+    gap: 5px;
+    width: 100%;
+    left: -33px;
   }
 
   .carousel-slider-information-container .tag {
-    left: 15px;
+    height: 24px;
+    width: 105px;
   }
 
   .carousel-slider-information-container .icon-star-container {
-    left: 15px;
+    position: relative;
+    height: 16px;
+    width: 80px;
+    left: 20px;
   }
 
   .carousel-slider-information-container .title {
+    position: relative;
+    width: 100%;
+    left: 20px;
     font-size: var(--font-size-xl);
-    left: 15px;
+    line-height: 25px;
+    white-space: normal;
   }
 
   .carousel-slider-information-container .overlap-group {
-    width: 200px;
-    height: 455px;
-    top: 100px;
-    left: 15px;
-  }
-
-  .carousel-slider-information-container .overlap-group-description {
-    height: 350px;
-  }
-
-  .carousel-slider-information-container .description {
-    width: 195px;
-    line-height: 25px;
-    display: -webkit-box;
-    -webkit-line-clamp: 13;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 72%;
+    width: 100%;
+    top: -50px;
+    left: 20px;
   }
 }
 
 /* Smartphones (portrait) (extra small screen size) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
   .carousel-slider-information-container {
-    height: 490px;
-    width: 245px;
-    top: 30px;
-    left: 65px;
+    top: 10px;
+    left: 25px;
+    gap: 20px;
+  }
+
+  .genres-container {
+    position: relative;
+    gap: 5px;
+    width: 100%;
+    left: -33px;
   }
 
   .carousel-slider-information-container .tag {
-    left: 20px;
+    height: 24px;
+    width: 105px;
   }
 
   .carousel-slider-information-container .icon-star-container {
+    position: relative;
+    height: 16px;
+    width: 80px;
     left: 20px;
   }
 
   .carousel-slider-information-container .title {
-    font-size: var(--font-size-xl);
+    position: relative;
+    width: 100%;
     left: 20px;
+    font-size: var(--font-size-xl);
+    line-height: 25px;
+    white-space: normal;
   }
 
   .carousel-slider-information-container .overlap-group {
-    width: 235px;
-    height: 385px;
-    top: 100px;
-    left: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
-  }
-
-  .carousel-slider-information-container .overlap-group-description {
-    height: 275px;
-  }
-
-  .carousel-slider-information-container .description {
-    width: 215px;
-    line-height: 25px;
-    display: -webkit-box;
-    -webkit-line-clamp: 10;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    height: 72%;
+    width: 100%;
+    top: -50px;
+    left: 20px;
   }
 }
 
 /* Smartphones (portrait) (small screen size) ----------- */
 @media only screen and (min-device-width: 360px) and (max-device-width: 376px) {
   .carousel-slider-information-container {
-    height: 560px;
-    width: 270px;
     top: 30px;
-    left: 75px;
+    left: 35px;
+    gap: 20px;
+  }
+
+  .genres-container {
+    position: relative;
+    gap: 5px;
+    width: 100%;
+    left: -33px;
   }
 
   .carousel-slider-information-container .tag {
-    left: 20px;
+    height: 24px;
+    width: 105px;
   }
 
   .carousel-slider-information-container .icon-star-container {
+    position: relative;
+    height: 16px;
+    width: 80px;
     left: 20px;
   }
 
   .carousel-slider-information-container .title {
-    font-size: var(--font-size-xxl);
-    top: 65px;
+    position: relative;
+    width: 100%;
     left: 20px;
-    line-height: normal;
-    word-wrap: break-word;
+    font-size: var(--font-size-xl);
+    line-height: 25px;
     white-space: normal;
   }
 
   .carousel-slider-information-container .overlap-group {
-    width: 260px;
-    height: 440px;
-    top: 115px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 72%;
+    width: 100%;
+    top: -50px;
     left: 20px;
-  }
-
-  .carousel-slider-information-container .overlap-group-description {
-    height: 325px;
-  }
-
-  .carousel-slider-information-container .description {
-    width: 250px;
-    line-height: 25px;
-    display: -webkit-box;
-    -webkit-line-clamp: 12;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 
 /* Smartphones (portrait) (medium screen size) ----------- */
 @media only screen and (min-device-width: 375px) and (max-device-width: 414px) {
   .carousel-slider-information-container {
-    height: 85vh;
-    width: 78vw;
-    top: 30px;
-    left: 75px;
+    top: 20px;
+    left: 35px;
+    gap: 20px;
+  }
+
+  .genres-container {
+    position: relative;
+    gap: 5px;
+    width: 100%;
+    left: -33px;
   }
 
   .carousel-slider-information-container .tag {
-    left: 20px;
+    height: 24px;
+    width: 105px;
   }
 
   .carousel-slider-information-container .icon-star-container {
+    position: relative;
+    height: 16px;
+    width: 80px;
     left: 20px;
   }
 
   .carousel-slider-information-container .title {
-    font-size: var(--font-size-xxl);
-    top: 65px;
+    position: relative;
+    width: 100%;
     left: 20px;
-    line-height: normal;
-    word-wrap: break-word;
+    font-size: var(--font-size-xxl);
+    line-height: 30px;
     white-space: normal;
   }
 
   .carousel-slider-information-container .overlap-group {
-    height: 69vh;
-    width: 75vw;
-    top: 115px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 72%;
+    width: 100%;
+    top: -50px;
     left: 20px;
-  }
-
-  .carousel-slider-information-container .overlap-group-description {
-    height: 54vh;
-  }
-
-  .carousel-slider-information-container .description {
-    width: 70vw;
-    line-height: 25px;
-    display: -webkit-box;
-    -webkit-line-clamp: 13;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 
 @media only screen and (device-height: 823px) {
   .carousel-slider-information-container .description {
-    -webkit-line-clamp: 17;
+    -webkit-line-clamp: 10;
   }
 }
